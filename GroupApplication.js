@@ -48,4 +48,33 @@ function display() {
         console.log(q3.children[0]);
     }
 }
+function input() {
+    for (var i = 0; i < 3; i++) {
+        var val = arrayQuestion[i].value;
+        var ans = void 0;
+        if (val === "tf") {
+        }
+        else if (val === "mc") {
+        }
+        else if (val === "blank") {
+        }
+        return ans;
+    }
+}
+var right = 0;
+function check() {
+    if (input() === arrayQuestion[0].answer) {
+        right + 1;
+    }
+    if (input() === arrayQuestion[1].answer) {
+        right + 1;
+    }
+    if (input() === arrayQuestion[2].answer) {
+        right + 1;
+    }
+}
+btn.addEventListener('click', function () {
+    check();
+    alert("You got " + right + "/3 correct!");
+});
 display();

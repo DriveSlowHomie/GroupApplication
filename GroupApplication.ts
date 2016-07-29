@@ -79,25 +79,43 @@ function display() {
     }
 }
 
+//function to check the question type and grab appropriatly
+function input(){
+  for (let i = 0; i < 3; i++){
+    let val:string = arrayQuestion[i].value;
+    let ans:string;
+    if (val === "tf"){
+      //grab tf input
+    }
+    else if (val === "mc"){
+      //grab mc input
+    }
+    else if (val === "blank"){
+      //grab blank input
+    }
+    return ans;
+  }
+}
+
 //A funtion to check the responses of the user to the answer property in Questions class
-// let right:number = 0;
-// function check() {
-//     if ( === arrayQuestion[1].answer){
-//       right + 1;
-//     }
-//     if ( === arrayQuestion[2].answer){
-//       right + 1;
-//     }
-//     if ( === arrayQuestion[3].answer){
-//       right + 1;
-//     }
-// }
-//
-//
-// btn.addEventListener('click', () => {
-//   check();
-//   alert(`You got ${right}/3 correct!`)
-// });
+let right:number = 0;
+function check() {
+    if (input() === arrayQuestion[0].answer){
+      right + 1;
+    }
+    if (input() === arrayQuestion[1].answer){
+      right + 1;
+    }
+    if (input() === arrayQuestion[2].answer){
+      right + 1;
+    }
+}
+
+
+btn.addEventListener('click', () => {
+  check();
+  alert(`You got ${right}/3 correct!`)
+});
 
 
 

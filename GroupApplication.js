@@ -3,6 +3,7 @@ var q1 = document.getElementById("q1");
 var q2 = document.getElementById("q2");
 var q3 = document.getElementById("q3");
 var elementArray = [q1, q2, q3];
+var btn = document.getElementById('submit');
 var Question = (function () {
     function Question(question, answer, type) {
         this.question = question;
@@ -25,11 +26,11 @@ for (var i = 0; i < 3; i++) {
 }
 function typeChecker(question) {
     if (question.type === "tf") {
-        var trueFalse = "<select name = \"trueFalse\" form = \"trueform\">\n                          <option value = \"true\">True</option>\n                          <option value = \"false\">False</option>\n                          </select>";
+        var trueFalse = "<select form = \"trueform\">\n                         <option value = \"true\">True</option>\n                         <option value = \"false\">False</option>\n                         </select>";
         return trueFalse;
     }
     else if (question.type === "mc") {
-        var mcElement = "<form>\n                        <input type= \"radio\" name= \"mc\" value= \"a\"> A.<br>\n                        <input type= \"radio\" name= \"mc\" value= \"b\"> B.<br>\n                        <input type= \"radio\" name= \"mc\" value= \"c\"> C.<br>\n                        <input type= \"radio\" name= \"mc\" value= \"d\"> D.<br>\n                        </form>";
+        var mcElement = "<form>\n                        <input type= \"radio\" name= \"mc\" value= \"a\" > A.<br>\n                        <input type= \"radio\" name= \"mc\" value= \"b\"> B.<br>\n                        <input type= \"radio\" name= \"mc\" value= \"c\"> C.<br>\n                        <input type= \"radio\" name= \"mc\" value= \"d\"> D.<br>\n                        </form>";
         return mcElement;
     }
     else if (question.type === "blank") {
@@ -42,6 +43,9 @@ function display() {
         elementArray[i].innerHTML = arrayQuestion[i].question + typeChecker(arrayQuestion[i]);
         console.log(arrayQuestion[i].question);
         console.log(elementArray);
+        console.log(q1.children[0]);
+        console.log(q2.children[0]);
+        console.log(q3.children[0]);
     }
 }
 display();

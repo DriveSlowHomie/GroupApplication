@@ -4,6 +4,7 @@ let q1 = document.getElementById("q1");
 let q2 = document.getElementById("q2");
 let q3 = document.getElementById("q3");
 let elementArray = [q1, q2, q3];
+let btn = document.getElementById('submit');
 
 
 
@@ -36,18 +37,16 @@ for (let i = 0; i < 3; i++) {
 //Fill in appropriate question type, function takes in parameter of random question data
 function typeChecker(question) {
     if (question.type === "tf") {
-
-        let trueFalse = `<select name = "trueFalse" form = "trueform">
-                          <option value = "true">True</option>
-                          <option value = "false">False</option>
-                          </select>`;
+        let trueFalse = `<select form = "trueform">
+                         <option value = "true">True</option>
+                         <option value = "false">False</option>
+                         </select>`;
 
         return trueFalse;
     }
     else if (question.type === "mc") {
-
         let mcElement = `<form>
-                        <input type= "radio" name= "mc" value= "a"> A.<br>
+                        <input type= "radio" name= "mc" value= "a" > A.<br>
                         <input type= "radio" name= "mc" value= "b"> B.<br>
                         <input type= "radio" name= "mc" value= "c"> C.<br>
                         <input type= "radio" name= "mc" value= "d"> D.<br>
@@ -74,10 +73,35 @@ function display() {
 
         console.log(arrayQuestion[i].question);
         console.log(elementArray);
+        console.log(q1.children[0]);
+        console.log(q2.children[0]);
+        console.log(q3.children[0]);
     }
 }
 
 //A funtion to check the responses of the user to the answer property in Questions class
+// let right:number = 0;
+// function check() {
+//     if ( === arrayQuestion[1].answer){
+//       right + 1;
+//     }
+//     if ( === arrayQuestion[2].answer){
+//       right + 1;
+//     }
+//     if ( === arrayQuestion[3].answer){
+//       right + 1;
+//     }
+// }
+//
+//
+// btn.addEventListener('click', () => {
+//   check();
+//   alert(`You got ${right}/3 correct!`)
+// });
+
+
+
+
 
 
 display();
